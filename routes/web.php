@@ -3,10 +3,16 @@
 use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Features;
 use Livewire\Volt\Volt;
+use PhpParser\Node\Expr\FuncCall;
+use SebastianBergmann\CodeCoverage\Test\Target\Function_;
 
 Route::get('/', function () {
     return view('welcome');
 })->name('home');
+
+Route::get('obtenerUsuario', function(){
+    return view('usuario');
+})->name('usuario');
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])

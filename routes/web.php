@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UsuarioController;
 use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Features;
 use Livewire\Volt\Volt;
@@ -10,9 +11,13 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
+Route::resource('usuario', UsuarioController::class);
+
+/* bloque de codigo que solo se encarga de mostrar un mensaje. No se usa el controlador
 Route::get('obtenerUsuario', function(){
     return view('usuario');
 })->name('usuario');
+*/
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])

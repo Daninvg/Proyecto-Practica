@@ -7,6 +7,7 @@
     <title>Usuario</title>
 </head>
 <body>
-    Aqui podemos ver al Usuario, HOla Usuario
+    <h1>Bienvenido al inicio de sesion.</h1>
+    <h3>¿Aun no realizas tu registro? Registrate y haz <a href="{{ route('vista-registro') }}">Click aqui</a></h3>
 </body>
 </html>

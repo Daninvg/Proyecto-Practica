@@ -10,9 +10,9 @@
     <form action="{{ route('usuario-registro') }}" method="POST">
         @csrf
         <h1>nombre</h1>
-        <input type="text" id="nombre" name="nombre" value="{{ old('nombre') }}"><br>
+        <input type="text" id="nombre" name="nombre" value="{{ old('nombre') }}" required><br>
         <h1>apellido</h1>
-        <input type="text" name="apellido" id="apellido" value="{{ old('apellido') }}">
+        <input type="text" name="apellido" id="apellido" value="{{ old('apellido') }}" required>
         <button type="submit" class="btn btn-primary"> Guardar </button> 
     </form>
 </body>

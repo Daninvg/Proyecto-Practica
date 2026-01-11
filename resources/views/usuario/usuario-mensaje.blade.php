@@ -7,8 +7,20 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Bienvenido al sistema de usuario</h1>
-    <p>¿Desea ingresar un nuevo usuario? <a href="">Click aqui</a> </p>
+
+    <h1>Bienvenido al inicio de sesion.</h1>
+    <h3>¿Aun no realizas tu registro? Crea una nueva cuenta aqui -> <a href="{{ route('usuario.create') }}">Click aqui</a><-</h3><br>
+    <h2>Usuarios registrados:</h2>
+        @foreach ($usuario as $user)
+            <a href="{{ route('usuario.show', $user->id)}}">
+                {{ $user->nombre }} </a><br>  
+            <a href="{{ route('usuario.edit', $user->id )}}">Editar </a><br> 
+            <form action="{{ route('usuario.destroy', $user->id) }}"  method="POST">
+            @csrf
+            @method ('DELETE')
+            <button type="submit" class="btn btn-danger"> Eliminar </button> 
+            </form>
+        @endforeach
 
 </body>
 </html>

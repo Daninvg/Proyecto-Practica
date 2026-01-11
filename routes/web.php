@@ -11,6 +11,7 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
+/*
 Route::get('usuario-mensaje', function(){
     return view('usuario.usuario-mensaje');
 })->name('usuario-mensaje');
@@ -20,6 +21,7 @@ Route::view('vista-registro', 'usuario.usuario-registro')->name('vista-registro'
 Route::post('usuario-registro', function(){
     return view('usuario.usuario-registro');
 })->name('usuario-registro');
+*/
 
 Route::resource('usuario', UsuarioController::class);
 

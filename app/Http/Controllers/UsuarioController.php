@@ -12,7 +12,8 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-        return view('usuario.usuario-mensaje');
+        $usuario = Usuario::all();
+        return view('usuario.usuario-mensaje', compact('usuario'));
     }
 
     /**
@@ -20,7 +21,7 @@ class UsuarioController extends Controller
      */
     public function create()
     {
-        //
+        return view('usuario.usuario-registro');
     }
 
     /**
@@ -28,7 +29,19 @@ class UsuarioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nombre' => 'required |max:20',
+            'apellido' => 'required |string',
+            'email' => 'required |string |'
+        ]);
+
+        $usuario = new Usuario();
+        $usuario->nombre = $request->nombre;
+        $usuario->apellido = $request->apellido;
+        $usuario->email = $request->email;
+        $usuario->save();
+
+        return redirect()->route('usuario.index');
     }
 
     /**
@@ -36,7 +49,7 @@ class UsuarioController extends Controller
      */
     public function show(Usuario $usuario)
     {
-        //
+        return view('usuario.usuario-mostrar-usuario', compact('usuario'));
     }
 
     /**

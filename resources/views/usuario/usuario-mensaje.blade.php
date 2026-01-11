@@ -8,6 +8,11 @@
 </head>
 <body>
     <h1>Bienvenido al inicio de sesion.</h1>
-    <h3>¿Aun no realizas tu registro? Registrate y haz <a href="{{ route('vista-registro') }}">Click aqui</a></h3>
+    <h3>¿Aun no realizas tu registro? Crea una nueva cuenta aqui -> <a href="{{ route('usuario.create') }}">Click aqui</a><-</h3><br>
+    <h2>Usuarios registrados:</h2>
+        @foreach ($usuario as $user)
+            <a href=" {{route('usuario.show', $user->id)}} ">
+                {{ $user->nombre }} </a>    
+        @endforeach
 </body>
 </html>

@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>hola</title>
+    <title>Informacion</title>
 </head>
 <body>
-    solo apra el commit de la branch 
+    <h1>La informacion del usuario</h1>     
+    <p>Nombre: {{ $usuario->nombre }}</p>
+     <p>Nombre: {{ $usuario->apellido }}</p>
+      <p>Nombre: {{ $usuario->email }}</p>
 </body>
 </html>

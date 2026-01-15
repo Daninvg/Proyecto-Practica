@@ -14,13 +14,8 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-<<<<<<< HEAD
-        return view('usuario.usuario-mensaje');
-        dd();
-=======
         $usuario = Usuario::all();
         return view('usuario.usuario-mensaje', compact('usuario'));
->>>>>>> usuariosMigracion
     }
 
     /**
@@ -98,5 +93,4 @@ class UsuarioController extends Controller
         $usuario->delete($usuario->id);
         return redirect()->route('usuario.index');
     }
-
 }
